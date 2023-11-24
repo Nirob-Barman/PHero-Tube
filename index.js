@@ -115,7 +115,7 @@ const displayNews = (news) => {
     const noDataDiv = document.createElement("div");
     noDataDiv.innerHTML = `
       <div class="col text-center noDivBorder">
-        <img class="noDivImg" src="./icon.png" class="card-img-top" style="width:100px; height:100px" alt="No Data">
+        <img class="noDivImg" src="./Icon.png" class="card-img-top" style="width:100px; height:100px" alt="No Data">
         <h3>Oops!! Sorry, There is no content here</h3>
       </div>`;
     newsContainer.appendChild(noDataDiv);
