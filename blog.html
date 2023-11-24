@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Blog Page</h1>
+        <p>This is the blog page. Here you can read all the blogs. You can also write your own blog. You can also delete your
+            own blog. You can also edit your own blog. You can also search your blog. You can also sort your blog. You can
+            also filter your blog. You can also filter your blog. You can also filter your blog. You can also filter your
+            blog.</p>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="accordion" id="accordionExample">
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            What is the scope of var, let, and const?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Answer:</strong> The scope of variables depends on whether they are declared using var, let,
+                            or const.
+                            <ul>
+                                <li><strong>var:</strong> Function-scoped, and variables are hoisted.</li>
+                                <li><strong>let:</strong> Block-scoped, and variables are not hoisted.</li>
+                                <li><strong>const:</strong> Block-scoped, similar to let, but cannot be reassigned.</li>
+                            </ul>
+            
+            
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Keyword</th>
+                                            <th>Scope</th>
+                                            <th>Update/Re-declare</th>
+                                            <th>Initialization</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>var</td>
+                                            <td>Functional Scope</td>
+                                            <td>Can be updated and re-declared</td>
+                                            <td>Can be declared without initialization</td>
+                                        </tr>
+                                        <tr>
+                                            <td>let</td>
+                                            <td>Block Scope</td>
+                                            <td>Can be updated but cannot be re-declared</td>
+                                            <td>Can be declared without initialization</td>
+                                        </tr>
+                                        <tr>
+                                            <td>const</td>
+                                            <td>Block Scope</td>
+                                            <td>Cannot be updated or re-declared</td>
+                                            <td>Must be initialized at the time of declaration</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What are the use cases of null and undefined?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Answer:</strong> Null and undefined are special values in JavaScript used to represent the
+                            absence
+                            of a value.
+                            <ul>
+                                <li><strong>null:</strong> Intentional absence of any object value.</li>
+                                <li><strong>undefined:</strong> Default value of variables that are not initialized.</li>
+                            </ul>
+            
+                            <h2>Comparison of Undefined and Null</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Property</th>
+                                            <th>Undefined</th>
+                                            <th>Null</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Meaning</td>
+                                            <td>Variable declared but not assigned a value</td>
+                                            <td>Assignment value representing no value</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Feature</td>
+                                            <td>ECMAScript (ES1) feature</td>
+                                            <td>Primitive value in JavaScript</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Syntax</td>
+                                            <td>Not applicable</td>
+                                            <td>null</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Global Property</td>
+                                            <td>No</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Supported Browsers</td>
+                                            <td>Chrome, Edge, IE, Firefox, Safari, Opera Mini</td>
+                                            <td>Chrome, Edge, IE, Firefox, Safari, Opera Mini</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What do you mean by REST API?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Answer:</strong> REST (Representational State Transfer) is an architectural style for
+                            designing
+                            networked applications.
+                            <ul>
+                                <li>An interface that follows the principles and constraints of REST</li>
+                                <li>A set of rules and conventions for building and interacting with web services</li>
+                                <li>Uses standard HTTP methods (GET, POST, PUT, DELETE).</li>
+                                <li>Stateless communication between client and server.</li>
+                                <li>Resources are identified by URIs (Uniform Resource Identifiers).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
