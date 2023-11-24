@@ -72,7 +72,7 @@ const displayNews = (news) => {
             <img src="${
               newss.thumbnail
             }" class="img-fluid img-thumbnail" style="height:200px">
-            <div class="position-absolute bottom-0 end-0">${formatPostedDate(
+            <div style="background-color: transparent; margin: 15px" class="position-absolute bottom-0 end-0 text-white">${formatPostedDate(
               newss?.others?.posted_date
             )}</div>
           </div>
