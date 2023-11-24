@@ -20,15 +20,14 @@ const displayButtons = (categories) => {
     button.classList.add("category-button", "m-2");
 
     button.addEventListener("click", function () {
-      // Remove the 'clicked' class from all buttons
+      // Removing the 'clicked' class from all buttons
       document.querySelectorAll(".category-button").forEach((btn) => {
         btn.classList.remove("clicked");
       });
 
-      // Add the 'clicked' class to the clicked button
+      // Adding the 'clicked' class to the clicked button only
       button.classList.add("clicked");
 
-      // Call the function to load news based on the clicked category
       loadNews(category.category_id);
       // console.log(category.category_id);
       categoryId = category.category_id;
