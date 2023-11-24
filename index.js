@@ -19,6 +19,11 @@ const displayButtons = (categories) => {
     button.innerText = category.category;
     button.classList.add("category-button", "m-2");
 
+    if (category.category_id === "1000") {
+      button.classList.add("clicked");
+      categoryId = category.category_id;
+    }
+
     button.addEventListener("click", function () {
       // Removing the 'clicked' class from all buttons
       document.querySelectorAll(".category-button").forEach((btn) => {
