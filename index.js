@@ -17,18 +17,19 @@ const displayButtons = (categories) => {
     button.innerText = category.category;
     button.classList.add("category-button", "m-2");
 
-    // button.addEventListener("click", function () {
-    //   // Toggle the 'clicked' class on the button
-    //   button.classList.toggle("clicked");
-
-    //   // Call the function to load news based on the clicked category
-    //   loadNews(category.category_id);
-    // });
-
     button.addEventListener("click", function () {
+      // Remove the 'clicked' class from all buttons
+      document.querySelectorAll(".category-button").forEach((btn) => {
+        btn.classList.remove("clicked");
+      });
+
+      // Add the 'clicked' class to the clicked button
+      button.classList.add("clicked");
+
+      // Call the function to load news based on the clicked category
       loadNews(category.category_id);
-      //   console.log(category.category_id);
     });
+
     buttonsContainer.appendChild(button);
   });
 };

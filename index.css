@@ -34,13 +34,13 @@ nav a {
     cursor: pointer;
 }
 
-/* .category-button.clicked {
-    background-color: #FF1F3D;
-} */
-
-.category-button:hover {
+.category-button.clicked {
     background-color: #FF1F3D;
 }
+
+/* .category-button:hover {
+    background-color: #FF1F3D;
+} */
 
 #blog-btn{
     background-color: #FF1F3D;
