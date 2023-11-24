@@ -1,5 +1,7 @@
 // alert();
 
+let categoryId;
+
 const loadButtons = () => {
   const buttonsContainer = document.getElementById("buttons-container");
 
@@ -28,6 +30,9 @@ const displayButtons = (categories) => {
 
       // Call the function to load news based on the clicked category
       loadNews(category.category_id);
+      // console.log(category.category_id);
+      categoryId = category.category_id;
+      // console.log(categoryId);
     });
 
     buttonsContainer.appendChild(button);
@@ -44,69 +49,6 @@ const loadNews = (id) => {
     // .then((data) => console.log(data.data));
     .then((data) => displayNews(data.data));
 };
-
-// const displayNews = (news) => {
-//   const newsContainer = document.getElementById("news-container");
-//   newsContainer.innerHTML = "";
-
-//   if (news.length === 0) {
-//     const noDataDiv = document.createElement("div");
-//     // noDataDiv.classList.add("col");
-//     noDataDiv.innerHTML = `
-//     <div class="col text-center noDivBorder">
-//         <img class="noDivImg" src="./icon.png" class="card-img-top" style="width:100px; height:100px" alt="No Data">
-//         <h3>Oops!! Sorry, There is no content here</h3>
-//     </div>`;
-
-//     newsContainer.appendChild(noDataDiv);
-//   } else {
-//     news.forEach((newss) => {
-//       console.log(newss);
-//       const newsDiv = document.createElement("div");
-//       newsDiv.classList.add("col-sm-3");
-//       newsDiv.innerHTML = `
-//               <div class="card">
-//             <div class="position-relative">
-//                         <img src="${
-//                           newss.thumbnail
-//                         }" style="width:auto; height:200px">
-//                         <div class="position-absolute bottom-0 end-0">${formatPostedDate(
-//                           newss?.others?.posted_date
-//                         )}
-//                         </div>
-
-//               </div>
-//                   <div class="card-body card-text">
-
-//                   <div class="d-flex justify-content-start gap-2">
-//                   <img src="${
-//                     newss?.authors[0]?.profile_picture
-//                   }" style="width: 30px; height: 30px;" class="rounded-circle">
-
-//                   <div>
-//                   <h5 class="card-title">${newss.title}</h5>
-//                       <div style="color:#5D5D5D;" class="d-flex justify-content-start align-content-center gap-3">
-//                         <p>${newss?.authors[0]?.profile_name}</p>
-//                         ${
-//                           newss?.authors[0]?.verified
-//                             ? '<p><i style="background-color: #2568EF;" class="fa-regular fa-circle-check"></i></p>'
-//                             : ""
-//                         }
-//                         </div>
-//                         <p style="color:#5D5D5D;" class="card-text">${
-//                           newss?.others?.views
-//                         } views</p>
-//                   </div>
-
-//                   </div>
-
-//                   </div>
-//       `;
-
-//       newsContainer.appendChild(newsDiv);
-//     });
-//   }
-// };
 
 const displayNews = (news) => {
   const newsContainer = document.getElementById("news-container");
@@ -180,7 +122,11 @@ function formatPostedDate(seconds) {
 }
 
 function sortByViews() {
-  fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+  console.log(categoryId);
+  // fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+  fetch(
+    `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
+  )
     .then((res) => res.json())
     .then((data) => {
       const sortedNews = data.data.sort((a, b) => {
