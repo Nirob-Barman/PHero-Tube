@@ -121,7 +121,7 @@ const displayNews = (news) => {
     newsContainer.appendChild(noDataDiv);
   } else {
     news.forEach((newss) => {
-      console.log(newss);
+      // console.log(newss);
       const newsDiv = document.createElement("div");
       newsDiv.classList.add("col-sm-3");
       newsDiv.innerHTML = `
@@ -169,13 +169,35 @@ function convertSecondsToHoursMinutes(seconds) {
 
 function formatPostedDate(seconds) {
   const { hours, minutes } = convertSecondsToHoursMinutes(seconds);
-  console.log(hours, minutes);
+  // console.log(hours, minutes);
   if (hours > 0) {
     return `${hours}hrs ${minutes}min ago`;
   } else {
     // return `${minutes}min ago`;
     return "";
   }
+}
+
+function sortByViews() {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+    .then((res) => res.json())
+    .then((data) => {
+      const sortedNews = data.data.sort((a, b) => {
+        const viewsA = parseViews(a.others.views);
+        const viewsB = parseViews(b.others.views);
+        return viewsB - viewsA;
+      });
+
+      displayNews(sortedNews);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
+
+function parseViews(views) {
+  const numericViews = parseFloat(views.replace("K", "e3").replace("M", "e6"));
+  return isNaN(numericViews) ? 0 : numericViews;
 }
 
 loadNews("1000");
