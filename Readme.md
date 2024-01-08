@@ -35,7 +35,7 @@ Welcome to PHero-tube! This is a simple web application that fetches and display
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/your-username/PHero-tube.git`
+1. Clone the repository: `git clone https://github.com/Nirob-Barman/PHero-tube.git`
 2. Navigate to the project directory: `cd PHero-tube`
 3. Open `index.html` in your preferred browser.
 
